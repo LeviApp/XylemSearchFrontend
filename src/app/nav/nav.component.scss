@@ -1,15 +1,18 @@
-div {
+.nav {
     width: 100%;
     display: flex;
     background-color: lightcyan;
     padding: 10px;
     justify-content: space-around;
+    border: 2px solid blue;
+
     input {
         width: 70%;
         margin: 10px;
         padding: 0px 20px;
         border-radius: 50px;
         font-size: 1.5rem;
+        border: 2px solid blue;
     }
     img {
         width: 20%;
@@ -22,7 +25,7 @@ div {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border-left: 3px solid black;
+        border-left: 3px solid blue;
         padding-left: 20px;
         width: 20%;
         h1 {
