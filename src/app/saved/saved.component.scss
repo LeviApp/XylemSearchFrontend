@@ -1,10 +1,40 @@
-div {
+.mainsaved {
     display: flex;
     background-color: #2EB991;
     width: 25%;
     justify-content: center;
-    padding: 10px;
-    h1 {
-        font-size: 1.5rem
+    align-items: center;
+    flex-direction: column;
+    .savedbutton {
+        display: flex;
+        flex-direction: row;
+        .saved {
+            font-size: 1.5rem;
+            color: white;
+            background-color: #2EB991;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .recommended {
+            font-size: 1.5rem;
+            color: white;
+            background-color: #258E70;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }  
     }
+
+    .savedgroup {
+        display: flex;
+        padding: 10px;
+        .savedcard {
+
+        }
+    }
+    
 }
