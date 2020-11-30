@@ -5,22 +5,19 @@
     </div>
 
     <div class='savedgroup'>
-        <div class='savedcard'>
-            <h4>Common Name:</h4>
-            <h4>Family Common Name:</h4>
-            <h4>Scientific Name:</h4>
-            <h4>Family:</h4>
-            <h4>Genus:</h4>
-            <h4>Year:</h4>
+        <div class='savedcard' *ngFor="let plant of plants">
+            <img src={{plant.image_url}} alt="">
+            <div>
+                <h4>Common Name: {{plant.common_name}}</h4>
+                <h4>Family Common Name: {{plant.family_common_name}}</h4>
+                <h4>Scientific Name: {{plant.scientific_name}}</h4>
+                <h4>Family: {{plant.family}}</h4>
+                <h4>Genus: {{plant.genus}}</h4>
+                <h4>Year: {{plant.year}}</h4>
+            </div>
+
 
 
         </div>
     </div>
 </div>
-this.common_name = common_name;
-this.scientific_name = scientific_name;
-this.family_common_name = family_common_name;
-this.family = family;
-this.genus = genus;
-this.year = year;
-this.image_url = image_url;
