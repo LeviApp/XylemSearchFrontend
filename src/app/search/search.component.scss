@@ -1,0 +1,15 @@
+@use '../app.component.scss';
+
+:host {
+    width: 65%;
+}
+
+.search {
+    width: 100%;
+    background-color: lightcyan;
+    padding: 10px;
+    p {
+        background-color: red;
+        width: 10%;
+    }
+}
