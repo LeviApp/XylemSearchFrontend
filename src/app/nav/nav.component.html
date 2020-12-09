@@ -1,11 +1,11 @@
 <div class="nav">
     <input type="text">
    <img src="../../assets/img/XylemSearchLogo.png" alt="">
-   <div class="login">
+   <div class="login" *ngIf="!token">
        <h1 (click)="login()">Log In</h1>
    </div>
-   <!-- <div class="logout">
+   <div class="logout" *ngIf="token">
     <h1 (click)="logout()"></h1>
     <h2>Levi Appenfelder</h2>
-   </div> -->
+   </div>
 </div>
