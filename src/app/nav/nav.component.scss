@@ -20,7 +20,28 @@
 
     }
 
-    div {
+    .login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-left: 3px solid blue;
+        padding-left: 20px;
+        width: 10%;
+        h1 {
+            font-size: 1.25rem;
+            padding: 10px;
+            color: white;
+            background-color: #2EB991;
+            letter-spacing: 1px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1:hover {
+            cursor: pointer;
+            background-color: #258E70;
+        }
+    }
+    .logout {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -29,6 +50,27 @@
         padding-left: 20px;
         width: 20%;
         h1 {
+            font-size: 1.25rem;
+            padding: 10px;
+            color: white;
+            background-color: #2EB991;
+            letter-spacing: 1px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1:hover {
+            cursor: pointer;
+            background-color: #258E70;
+        }
+        h1::before {
+            content: "Logged In"
+        }
+        h1:hover::before {
+            content: "Log Out";
+        }
+        button {
+            background-color: white;
+            border: white;
+            padding: 10px;
             font-size: 1.5rem;
         }
     }
