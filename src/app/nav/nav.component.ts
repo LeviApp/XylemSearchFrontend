@@ -36,4 +36,9 @@ export class NavComponent implements OnInit {
 
     return claims ? claims : null;
   }
+
+  plantsearch(e) {
+    e.preventDefault();
+    console.log('You searched for a plant!')
+  }
 }
