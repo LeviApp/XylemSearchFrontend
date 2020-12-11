@@ -1,5 +1,7 @@
 <div class="nav">
-    <input type="text">
+    <form (submit)="plantsearch($event)" action="#">
+        <input type="text">
+    </form>
    <img src="../../assets/img/XylemSearchLogo.png" alt="">
    <div class="login" *ngIf="!token">
        <h1 (click)="login()">Log In</h1>
