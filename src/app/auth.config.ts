@@ -2,14 +2,14 @@ import { AuthConfig } from 'angular-oauth2-oidc';
 
 export const authCodeFlowConfig: AuthConfig = {
   // Url of the Identity Provider
-  issuer: 'https://idsvr4.azurewebsites.net',
+  issuer: 'https://accounts.google.com/o/oauth2/auth',
 
   // URL of the SPA to redirect the user to after login
   redirectUri: window.location.origin,
 
   // The SPA's id. The SPA is registerd with this id at the auth-server
   // clientId: 'server.code',
-  clientId: 'spa',
+  clientId: '254961594043-j5godahnvebt1fqn2ikbiu33bbe2au4d.apps.googleusercontent.com',
 
   // Just needed if your auth server demands a secret. In general, this
   // is a sign that the auth server is not configured with SPAs in mind
@@ -23,7 +23,7 @@ export const authCodeFlowConfig: AuthConfig = {
   // The first four are defined by OIDC.
   // Important: Request offline_access to get a refresh token
   // The api scope is a usecase specific one
-  scope: 'openid profile email offline_access api',
+  scope: 'profile email openid',
 
   showDebugInformation: true,
 };
