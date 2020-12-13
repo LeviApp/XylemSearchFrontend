@@ -9,7 +9,7 @@ export const authCodeFlowConfig: AuthConfig = {
 
   // The SPA's id. The SPA is registerd with this id at the auth-server
   // clientId: 'server.code',
-  clientId: '254961594043-j5godahnvebt1fqn2ikbiu33bbe2au4d.apps.googleusercontent.com',
+  clientId: '254961594043',
 
   // Just needed if your auth server demands a secret. In general, this
   // is a sign that the auth server is not configured with SPAs in mind
