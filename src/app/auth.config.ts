@@ -23,7 +23,7 @@ export const authCodeFlowConfig: AuthConfig = {
   // The first four are defined by OIDC.
   // Important: Request offline_access to get a refresh token
   // The api scope is a usecase specific one
-  scope: 'profile email openid',
+  scope: 'profile email',
 
   showDebugInformation: true,
 };
