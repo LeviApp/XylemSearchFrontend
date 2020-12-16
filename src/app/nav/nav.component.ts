@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc'
 import { authCodeFlowConfig } from '../auth.config';
 import { JwksValidationHandler } from 'angular-oauth2-oidc-jwks';
+import { ApiService } from '../api.service'
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -9,7 +10,8 @@ import { JwksValidationHandler } from 'angular-oauth2-oidc-jwks';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private oauthService: OAuthService) {
+  public test = []
+  constructor(private oauthService: OAuthService, private _apiService: ApiService ) {
     this.configureSingleSignOn();
    }
 
@@ -37,7 +39,9 @@ export class NavComponent implements OnInit {
     return claims ? claims : null;
   }
 
-  plantsearch(e) {
+  plantsearch(e, val) {
+    this._apiService.plantSearch(val)
+
     e.preventDefault();
     console.log('You searched for a plant!')
   }
