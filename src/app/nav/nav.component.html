@@ -1,6 +1,6 @@
 <div class="nav">
-    <form (submit)="plantsearch($event, 'bamboo')" action="#">
-        <input type="text">
+    <form [formGroup]="SearchForm" (submit)="plantsearch($event, 'bamboo')" action="#">
+        <input type="text" formControlName="search">
     </form>
    <img src="../../assets/img/XylemSearchLogo.png" alt="">
    <div class="login" *ngIf="!token">
