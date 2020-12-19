@@ -8,6 +8,7 @@ import { SavedComponent } from './saved/saved.component';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OAuthModule } from 'angular-oauth2-oidc';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { OAuthModule } from 'angular-oauth2-oidc';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    OAuthModule.forRoot()
+    ReactiveFormsModule,
+    OAuthModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

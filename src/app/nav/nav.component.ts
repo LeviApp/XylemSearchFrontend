@@ -3,6 +3,8 @@ import { OAuthService } from 'angular-oauth2-oidc'
 import { authCodeFlowConfig } from '../auth.config';
 import { JwksValidationHandler } from 'angular-oauth2-oidc-jwks';
 import { ApiService } from '../api.service'
+import { FormBuilder, FormGroup } from '@angular/forms';
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -11,12 +13,21 @@ import { ApiService } from '../api.service'
 export class NavComponent implements OnInit {
 
   public test = []
-  constructor(private oauthService: OAuthService, private _apiService: ApiService ) {
+  constructor(private oauthService: OAuthService, private _apiService: ApiService, private fb: FormBuilder ) {
     this.configureSingleSignOn();
    }
 
-  ngOnInit(): void {
+   SearchForm: FormGroup;
+
+  ngOnInit() {
+    this.SearchForm = this.fb.group({
+      search: ''
+    })
+
+    this.SearchForm.valueChanges.subscribe(console.log)
+
   }
+
 
   configureSingleSignOn() {
     this.oauthService.configure(authCodeFlowConfig);
