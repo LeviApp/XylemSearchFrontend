@@ -50,10 +50,10 @@ export class NavComponent implements OnInit {
     return claims ? claims : null;
   }
 
-  plantsearch(e, val) {
-    this._apiService.plantSearch(val)
-
+  plantsearch(e) {
     e.preventDefault();
-    console.log('You searched for a plant!')
+
+    let plant = this.SearchForm.get("search").value
+    this._apiService.plantSearch(plant)
   }
 }
