@@ -1,5 +1,5 @@
 <div class="nav">
-    <form [formGroup]="SearchForm" (submit)="plantsearch($event, 'bamboo')" action="#">
+    <form [formGroup]="SearchForm" (submit)="plantsearch($event, SearchForm.search)" action="#">
         <input type="text" formControlName="search">
     </form>
    <img src="../../assets/img/XylemSearchLogo.png" alt="">
