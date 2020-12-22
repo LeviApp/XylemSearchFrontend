@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class NavComponent implements OnInit {
 
-  public test = []
+  public results = []
   constructor(private oauthService: OAuthService, private _apiService: ApiService, private fb: FormBuilder ) {
     this.configureSingleSignOn();
    }
@@ -23,8 +23,6 @@ export class NavComponent implements OnInit {
     this.SearchForm = this.fb.group({
       search: ''
     })
-
-    this.SearchForm.valueChanges.subscribe(console.log)
 
   }
 
@@ -54,6 +52,9 @@ export class NavComponent implements OnInit {
     e.preventDefault();
 
     let plant = this.SearchForm.get("search").value
-    this._apiService.plantSearch(plant)
+    this._apiService.plantSearch(plant).subscribe(data => {
+      this.results = data
+      console.log(this.results, data, "this is the results")
+    })
   }
 }
