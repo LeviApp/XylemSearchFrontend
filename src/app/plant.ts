@@ -14,5 +14,5 @@ export interface IPlant {
     synonyms: string[],
     genus: string,
     family: string,
-    links: {}
+    links: object
 }

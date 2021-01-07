@@ -8,15 +8,14 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiService {
-  private _searchapi: string = ""
   constructor(private http: HttpClient) { }
 
-  plantSearch(val): Observable<IPlant[]> {
-    this._searchapi = `https://trefle.io/api/v1/plants/search?token=zgXCcdZKTKqpECf1MxQaBJ9zTO39Wdaln6kB88ffzcQ&q=${val}`
-    console.log('You searched for a plant!', val)
-    return this.http.get<IPlant[]>(this._searchapi).pipe(
-      catchError(this.handleError)
-    )
+  plantSearch(val): Observable<any> {
+    let searchapi = `https://trefle.io/api/v1/plants/search?token=zgXCcdZKTKqpECf1MxQaBJ9zTO39Wdaln6kB88ffzcQ&q=${val}`
+    console.log('You searched for a plant!', val, searchapi)
+    console.log(this.http.get<IPlant[]>(searchapi))
+    return this.http.get<any>(searchapi)
+    
   }
 
   handleError(error) {

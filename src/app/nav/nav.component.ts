@@ -48,13 +48,16 @@ export class NavComponent implements OnInit {
     return claims ? claims : null;
   }
 
-  plantsearch(e) {
+  plantSearch(e) {
     e.preventDefault();
 
     let plant = this.SearchForm.get("search").value
     this._apiService.plantSearch(plant).subscribe(data => {
       this.results = data
       console.log(this.results, data, "this is the results")
-    })
+    },
+    (error) => {
+      console.log(error, 'there is a huge issue')
+   })
   }
 }
