@@ -50,14 +50,8 @@ export class NavComponent implements OnInit {
 
   plantSearch(e) {
     e.preventDefault();
-
+    console.log(this._apiService, 'this is the service')
     let plant = this.SearchForm.get("search").value
-    this._apiService.plantSearch(plant).subscribe(data => {
-      this.results = data
-      console.log(this.results, data, "this is the results")
-    },
-    (error) => {
-      console.log(error, 'there is a huge issue')
-   })
+    this._apiService.plantSearch(plant)
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http'
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http'
 import { IPlant } from './plant'
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -8,14 +8,19 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiService {
+  private _searchapi: string = ""
   constructor(private http: HttpClient) { }
 
   plantSearch(val): Observable<any> {
-    let searchapi = `https://trefle.io/api/v1/plants/search?token=zgXCcdZKTKqpECf1MxQaBJ9zTO39Wdaln6kB88ffzcQ&q=${val}`
-    console.log('You searched for a plant!', val, searchapi)
-    console.log(this.http.get<IPlant[]>(searchapi))
-    return this.http.get<any>(searchapi)
-    
+    let params = new HttpParams()
+    .set("token", "zgXCcdZKTKqpECf1MxQaBJ9zTO39Wdaln6kB88ffzcQ")
+    .set("q", "cactus");
+    this._searchapi = `https://trefle.io/api/v1/plants/search?token=zgXCcdZKTKqpECf1MxQaBJ9zTO39Wdaln6kB88ffzcQ&q=cactus`
+    // this._searchapi = "https://quotes-4-life.herokuapp.com/home"
+    // this._searchapi = `https://www.omdbapi.com/?s=${val}&type=movie&page=1&apikey=e7fa079b`
+
+    console.log('You searched for a plant!', val)
+    return this.http.get<any>(this._searchapi, {params})
   }
 
   handleError(error) {
