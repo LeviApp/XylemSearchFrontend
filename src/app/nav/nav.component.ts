@@ -51,7 +51,7 @@ export class NavComponent implements OnInit {
     e.preventDefault();
     console.log(this._apiService, 'this is the service')
     let plant = this.SearchForm.get("search").value
-    this._apiService.plantSearch(plant).subscribe(data => {
+    this._apiService.plantSearch(plant,1).subscribe(data => {
       console.log(data, 'this will have to do')
       this._apiService.results = data["data"]
     },

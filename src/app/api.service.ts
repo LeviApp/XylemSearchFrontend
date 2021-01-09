@@ -13,9 +13,9 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  plantSearch(val): Observable<any> {
+  plantSearch(val, num): Observable<any> {
 
-    this._searchapi = `http://trefle.io/api/v1/plants/search?token=zgXCcdZKTKqpECf1MxQaBJ9zTO39Wdaln6kB88ffzcQ&q=${val}`
+    this._searchapi = `http://trefle.io/api/v1/plants/search?token=zgXCcdZKTKqpECf1MxQaBJ9zTO39Wdaln6kB88ffzcQ&q=${val}&page=${num}`
 
     return this.http.get<any>(this._searchapi)
   }
